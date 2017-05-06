@@ -46,25 +46,11 @@ public class Main {
             case 2: //Automate fini
                 // Format de sortie -> à générer avec votre code
                 if (fileName == null) {
-                    // Afficher le tableau de la fonction de transition
-                    // P. ex. pour le motif M = "ababaca"
-                    //                  a b c
-
                     new FiniteStateAutomaton(motif);
-                    System.out.println("1 0 0"); // etat 0
-                    System.out.println("1 2 0"); // etat 1
-                    System.out.println("3 0 0"); // etat 2
-                    System.out.println("1 4 0"); // etat 3
-                    System.out.println("5 0 0"); // etat 4
-                    System.out.println("1 4 6"); // etat 5
-                    System.out.println("7 0 0"); // etat 6
-                    System.out.println("1 2 0"); // etat 7
                 } else {
                     // Afficher le nombre d'occurences du motif
                     // suivi de la liste des positions de sa 1ere lettre dans le texte
                     new FiniteStateAutomaton(fileContent, motif);
-                    System.out.println("13"); // nombre d'occurences du motifs
-                    System.out.println("0 3 46 67 109"); //liste des positions du motif
                 }
                 break;
             case 3: //Knut-Morris-Pratt
