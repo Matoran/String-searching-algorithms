@@ -1,4 +1,5 @@
 import string_tools.FiniteStateAutomaton;
+import string_tools.KnutMorrisPratt;
 import string_tools.RabinKarp;
 
 import java.io.*;
@@ -46,7 +47,8 @@ public class Main {
             case 2: //Automate fini
                 // Format de sortie -> à générer avec votre code
                 if (fileName == null) {
-                    new FiniteStateAutomaton(motif);
+
+                new FiniteStateAutomaton(motif);
                 } else {
                     // Afficher le nombre d'occurences du motif
                     // suivi de la liste des positions de sa 1ere lettre dans le texte
@@ -56,16 +58,10 @@ public class Main {
             case 3: //Knut-Morris-Pratt
                 // Format de sortie -> à générer avec votre code
                 if (fileName == null) {
-                    //Afficher le tableau des prefixes
-                    // P. ex. pour le motif M = "ababaca"
-                    //                  0 1 2 3 4 5 6           q
-                    //                  a b a b a c a         M[q]
-                    System.out.println("0 0 1 2 3 0 1");  // pi[q]
+                    KnutMorrisPratt kmp = new KnutMorrisPratt(motif);
+                    kmp.displayPi();
                 } else {
-                    // Afficher le nombre d'occurences du motif
-                    // suivi de la liste des positions de sa 1ere lettre dans le texte
-                    System.out.println("13"); // nombre d'occurences du motifs
-                    System.out.println("0 3 46 67 109"); //liste des positions du motif
+                    new KnutMorrisPratt(fileContent, motif);
                 }
                 break;
             case 4: //Boyer-Moore
