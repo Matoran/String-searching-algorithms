@@ -1,3 +1,4 @@
+import string_tools.BoyerMoore;
 import string_tools.FiniteStateAutomaton;
 import string_tools.KnutMorrisPratt;
 import string_tools.RabinKarp;
@@ -71,6 +72,7 @@ public class Main {
                     // P. ex. pour le motif M = "anpanman"
                     // 1er tableau
                     //                  a n p m *       lettre (selon ordre dans le motif)
+                    new BoyerMoore(motif);
                     System.out.println("1 0 5 2 8"); // decalage
                     // 2eme tableau
                     // partie du motif bonne (depuis la droite):
