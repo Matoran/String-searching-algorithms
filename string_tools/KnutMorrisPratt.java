@@ -1,12 +1,22 @@
 package string_tools;
 
 /**
- * Created by matoran on 5/1/17.
+ * @author ISELI Cyril & RODRIGUES Marco
+ * @version 0.1
+ * @date April and May 2017
+ * @file KnutMorrisPratt.java
+ *
+ * Find a pattern in the text with the KnutMorrisPratt algorithm
+ *
  */
 public class KnutMorrisPratt {
     char m[];
     int pi[];
 
+    /**
+     * Calculate pi with KnutMorrisPratt algorithm
+     * @param pattern
+     */
     public KnutMorrisPratt(String pattern){
         m = new char[pattern.length()];
         pi = new int[pattern.length()];
@@ -31,6 +41,11 @@ public class KnutMorrisPratt {
         }
     }
 
+    /**
+     * Find the pattern in the text
+     * @param text
+     * @param pattern
+     */
     public KnutMorrisPratt(String text, String pattern){
         this(pattern);
         int nbM = pattern.length();
@@ -56,6 +71,9 @@ public class KnutMorrisPratt {
         System.out.println(occurences);
     }
 
+    /**
+     * Display pi
+     */
     public void displayPi(){
         for (int i : pi) {
             System.out.print(i + " ");
