@@ -19,15 +19,16 @@ public class KnutMorrisPratt {
      */
     public KnutMorrisPratt(String pattern){
         m = new char[pattern.length()];
-        pi = new int[pattern.length()];
+        pi = new int[pattern.length()+1];
 
         int maxK = 0;
         int cpt = 0;
-        for (int i = 0; i < m.length; i++){
-            m[i] = pattern.charAt(i);
-            for(int k = 0; k < i; k++){
+        pi[0] = 0;
+        for (int i = 1; i <= m.length; i++){
+            m[i-1] = pattern.charAt(i-1);
+            for(int k = 0; k < i-1; k++){
                 for(int j = 0; j <= k; j++){
-                    if(m[j] == pattern.charAt(i-k+j)){
+                    if(m[j] == pattern.charAt(i-k+j-1)){
                        cpt++;
                     }
                 }
@@ -58,13 +59,13 @@ public class KnutMorrisPratt {
             }
 
             if(m[q] == text.charAt(i)){
-                q = q+1;
+                q++;
             }
 
             if(q == nbM){
                 count++;
                 occurences.append(i-nbM+1).append(" ");
-                q = pi[q-1];
+                q = pi[q];
             }
         }
         System.out.println(count);
@@ -75,7 +76,7 @@ public class KnutMorrisPratt {
      * Display pi
      */
     public void displayPi(){
-        for (int i : pi) {
+        for (int i = 1; i < pi.length; i++) {
             System.out.print(i + " ");
         }
         System.out.println();
