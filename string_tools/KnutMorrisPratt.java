@@ -6,7 +6,7 @@ package string_tools;
  * @date April and May 2017
  * @file KnutMorrisPratt.java
  *
- * Find a pattern in the text with the KnutMorrisPratt algorithm
+ * Find a pattern in the text with the Knut-Morris-Pratt algorithm
  *
  */
 public class KnutMorrisPratt {
@@ -75,7 +75,7 @@ public class KnutMorrisPratt {
     /**
      * Display pi
      */
-    public void displayPi(){
+    public void display(){
         for (int i = 1; i < pi.length; i++) {
             System.out.print(i + " ");
         }

@@ -3,7 +3,13 @@ package string_tools;
 import java.util.HashMap;
 
 /**
- * Created by matoran on 5/1/17.
+ * @author ISELI Cyril & RODRIGUES Marco
+ * @version 0.1
+ * @date April and May 2017
+ * @file FiniteStateAutomaton.java
+ *
+ * Find a pattern in the text with the finite-state automaton algorithm
+ *
  */
 public class FiniteStateAutomaton {
     int states[][];
@@ -62,5 +68,14 @@ public class FiniteStateAutomaton {
         int m = subTry.length();
         int n = subPattern.length();
         return n <= m && subTry.substring(m - n).equals(subPattern);
+    }
+
+    public void display() {
+        for (int[] state : states) {
+            for (int value : state) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
     }
 }
