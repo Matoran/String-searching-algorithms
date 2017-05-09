@@ -69,18 +69,16 @@ public class BoyerMoore {
             }while (pos > 0 && pattern.charAt(pos-1) == forbidden);
             if(pos==-1){
                 //take subpattern of the subpattern until the first occurence is at index 0
-                while(subPattern.length() > 1 && pattern.indexOf(subPattern) != 0){
+                while(!pattern.substring(0, subPattern.length()).equals(subPattern)){
                     subPattern = subPattern.substring(1);
                 }
-                if(subPattern.length() == 1)
-                    shift = pattern.length();
-                else
-                    shift = pattern.length()-subPattern.length();
+                shift = pattern.length()-subPattern.length();
             }else{
                 shift = pattern.length()-pos-subPattern.length();
             }
             suffix[pattern.length()-i-1] = shift;
         }
+        //last is always equals to before last
         suffix[pattern.length()-1] = suffix[pattern.length()-2];
     }
 
